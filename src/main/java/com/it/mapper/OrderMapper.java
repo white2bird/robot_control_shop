@@ -7,7 +7,7 @@ import com.it.res.OrderStatisticsVO;
 import java.util.List;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 18:25
  */
 public interface OrderMapper extends BaseMapper<Order> {

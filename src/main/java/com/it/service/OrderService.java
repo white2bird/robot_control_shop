@@ -10,7 +10,7 @@ import com.it.res.OrderStatisticsVO;
 import java.util.List;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 18:27
  */
 public interface OrderService extends IService<Order> {

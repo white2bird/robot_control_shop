@@ -16,7 +16,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 11:47
  */
 @Component

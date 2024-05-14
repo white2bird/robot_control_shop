@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 21:00
  */
 @Data

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 18:27
  */
 public interface GoodService extends IService<Good> {

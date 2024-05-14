@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/20 13:39
  */
 @RequestMapping("/resources")

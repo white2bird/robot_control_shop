@@ -1,7 +1,7 @@
 package com.it.constants;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/20 13:52
  */
 public class VideoType {

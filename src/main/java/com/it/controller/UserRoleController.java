@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 14:42
  */
 @RestController

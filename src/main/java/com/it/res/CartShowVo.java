@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/22 00:49
  */
 @Data

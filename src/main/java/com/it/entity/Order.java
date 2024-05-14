@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 15:59
  */
 @Data

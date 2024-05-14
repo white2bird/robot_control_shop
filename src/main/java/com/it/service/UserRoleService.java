@@ -5,7 +5,7 @@ import com.it.entity.UserRole;
 import com.it.req.UserRoleUpdateReqDTO;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 14:43
  */
 public interface UserRoleService extends IService<UserRole> {

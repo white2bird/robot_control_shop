@@ -7,16 +7,16 @@ import lombok.Data;
 
 /**
  * 
- * @date 2024/4/21 13:24
+ * @date 2024/5/14 11:45
  */
 @Data
-@TableName("role_menu")
-public class RoleMenu {
+@TableName("menu_type_relation")
+public class MenuTypeRelation {
 
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
-    private Long roleId;
+    private Long foodMenuId;
 
-    private Long menuId;
+    private Long foodTypeId;
 }

@@ -6,7 +6,7 @@ import com.it.entity.Role;
 import java.util.List;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 11:29
  */
 public interface RoleMapper extends BaseMapper<Role> {

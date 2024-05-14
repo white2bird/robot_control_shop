@@ -8,7 +8,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 15:59
  */
 @Data

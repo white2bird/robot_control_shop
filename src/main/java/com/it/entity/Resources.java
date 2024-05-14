@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/20 13:31
  */
 @Data

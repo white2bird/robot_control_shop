@@ -6,7 +6,7 @@ import com.it.entity.Resources;
 import com.it.req.ResourcesShowReqDTO;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/20 13:33
  */
 public interface ResourcesService extends IService<Resources> {

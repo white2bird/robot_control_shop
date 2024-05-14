@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/22 00:55
  */
 @Mapper(componentModel = "spring")

@@ -11,7 +11,7 @@ import com.it.service.ResourcesService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/20 13:33
  */
 @Service

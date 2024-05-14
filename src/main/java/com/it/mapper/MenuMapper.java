@@ -6,7 +6,7 @@ import com.it.entity.Menu;
 import java.util.List;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/18 17:34
  */
 public interface MenuMapper extends BaseMapper<Menu> {

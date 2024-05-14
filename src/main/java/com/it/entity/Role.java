@@ -10,7 +10,7 @@ import lombok.Data;
 import java.sql.Date;
 
 /**
- * @author yiming@micous.com
+ * 
  * @date 2024/4/21 11:27
  */
 @TableName("sys_role")
