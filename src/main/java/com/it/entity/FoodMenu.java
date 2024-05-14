@@ -18,5 +18,9 @@ public class FoodMenu {
 
     private String name;
 
-    private String desc;
+    private String menuDesc;
+
+    private String pic;
+
+    private String steps;
 }
