@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.mapper.MenuMapper">
+
+
+    <select id="getMenuWithPermission" resultType="com.it.entity.Menu">
+        select distinct menu.* from sys_user left join sys_role_user on sys_user.id = sys_role_user.user_id
+                                 left join sys_role on sys_role_user.role_id = sys_role.id
+                                 left join role_menu on sys_role.id = role_menu.role_id
+                                 left join menu on role_menu.menu_id = menu.id
+                                 where sys_user.id = #{id} and menu.id is not null
+    </select>
+
+    <select id="getMenuWithRoleId" resultType="com.it.entity.Menu">
+        select menu.* from role_menu left join menu on role_menu.menu_id = menu.id
+        where role_menu.role_id = #{id} and menu.id is not null
+    </select>
+</mapper>
