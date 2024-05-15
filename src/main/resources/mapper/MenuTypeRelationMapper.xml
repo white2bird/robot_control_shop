@@ -3,5 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.it.mapper.MenuTypeRelationMapper">
 
-
+    <select id="randomRecommend" resultType="java.lang.Long">
+        SELECT food_menu.id FROM food_menu left join menu_type_relation on food_menu.id = menu_type_relation.food_menu_id where #{type} = menu_type_relation.food_type_id ORDER BY rand() ASC limit 1
+    </select>
 </mapper>

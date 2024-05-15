@@ -40,9 +40,9 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }catch (Exception e){
             e.printStackTrace();
-//            handError(response);
+            handError(response);
             // TODO
-            return true;
+            return false;
         }
     }
 

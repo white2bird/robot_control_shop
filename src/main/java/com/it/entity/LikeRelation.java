@@ -17,4 +17,6 @@ public class LikeRelation {
     private Long id;
 
     private Long foodMenuId;
+
+    private Long userId;
 }

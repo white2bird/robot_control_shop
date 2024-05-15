@@ -8,4 +8,6 @@ import com.it.entity.LikeRelation;
  * @date 2024/5/14 14:11
  */
 public interface LikeRelationMapper extends BaseMapper<LikeRelation> {
+
+    Long selectMaxLiked(Long foodType);
 }

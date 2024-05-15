@@ -2,6 +2,9 @@ package com.it.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.it.entity.FoodMenu;
+import com.it.req.LikeRelationReq;
+import com.it.res.FoodMenuDetailVO;
+import com.it.res.FoodMenuVO;
 import com.it.res.MenuMainVO;
 
 import java.util.List;
@@ -13,4 +16,18 @@ import java.util.List;
 public interface FoodMenuService extends IService<FoodMenu> {
 
     List<MenuMainVO> search(Integer type);
+
+    List<MenuMainVO> searchByName(String name);
+
+    FoodMenuDetailVO detail(Long id);
+
+    Boolean likeRelation(LikeRelationReq likeRelationReq);
+
+    List<MenuMainVO> getStoreMenus();
+
+    FoodMenuDetailVO recommend(Long foodType);
+
+    List<FoodMenuVO> getBanner();
+
+
 }

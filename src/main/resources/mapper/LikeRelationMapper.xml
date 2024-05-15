@@ -3,4 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.it.mapper.LikeRelationMapper">
 
+    <select id="selectMaxLiked" resultType="java.lang.Long">
+        select like_relation.food_menu_id from like_relation left join menu_type_relation
+                on like_relation.food_menu_id = menu_type_relation.food_menu_id
+                where menu_type_relation.food_type_id = #{type} group by like_relation.food_menu_id order by count(*) desc;
+    </select>
 </mapper>

@@ -7,10 +7,13 @@ import com.it.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.util.UrlPathHelper;
 
 import javax.annotation.Resource;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author 
@@ -37,7 +40,7 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/META-INF/resources/","classpath:/META-INF/resources/webjars/");
         registry.addResourceHandler("/static/**")
                 // todo
-                .addResourceLocations("file:C:\\Users\\wang\\Downloads\\");
+                .addResourceLocations("file:/Users/mico/PycharmProjects/wsData/image/");
     }
 
     @Override
@@ -61,4 +64,7 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .exposedHeaders("*");
 
     }
+
+
+
 }
