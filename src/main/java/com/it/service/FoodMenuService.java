@@ -25,6 +25,9 @@ public interface FoodMenuService extends IService<FoodMenu> {
 
     List<MenuMainVO> getStoreMenus();
 
+
+    MenuMainVO getStoreMenus(Long userId);
+
     FoodMenuDetailVO recommend(Long foodType);
 
     List<FoodMenuVO> getBanner();

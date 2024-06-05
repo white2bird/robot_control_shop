@@ -58,6 +58,14 @@ public class FoodMenuController {
         return Result.ok(storeMenus);
     }
 
+    @GetMapping("/getStoredMenusById")
+    public Result getStoredMenusById(@RequestParam("userId") Long userId){
+        MenuMainVO storeMenus = foodMenuService.getStoreMenus(userId);
+        return Result.ok(storeMenus);
+    }
+
+
+
     @GetMapping("/recommend/{foodType}")
     public Result recommend(@PathVariable("foodType") Long foodType){
         FoodMenuDetailVO recommend = foodMenuService.recommend(foodType);

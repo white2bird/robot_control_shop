@@ -10,9 +10,8 @@ import org.springframework.stereotype.Component;
 
 
 import javax.annotation.Resource;
-import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.UUID;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,8 +25,8 @@ public class MyBatisDefaultValueObjectHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
-        this.setFieldValByName("createDate", new Date(new java.util.Date().getTime()), metaObject);
-        this.setFieldValByName("createTime", new Date(new java.util.Date().getTime()), metaObject);
+        this.setFieldValByName("createDate", new Date(), metaObject);
+        this.setFieldValByName("createTime", new Date(), metaObject);
         this.setFieldValByName("orderNo", genOrderNo(), metaObject);
     }
 

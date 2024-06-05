@@ -27,6 +27,6 @@ public class MacAddress {
         String mac = MacUtil.getMac();
         this.macAddress = mac;
 
-        System.out.println("-----set ---mac --- successs-----");
+        System.out.println("-----set ---mac --- success-----");
     }
 }

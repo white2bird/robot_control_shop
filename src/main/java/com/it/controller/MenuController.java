@@ -26,18 +26,18 @@ public class MenuController {
     @GetMapping("/menuList")
     public Result getMenuList(){
         List<Menu> userMenuListByPermission = menuService.getUserMenuListByPermission();
-        return Result.ok(userMenuListByPermission, 200, "successs");
+        return Result.ok(userMenuListByPermission, 200, "success");
     }
 
     @GetMapping("/getAllMenuList")
     public Result getAllMenuList(){
         List<Menu> userMenuListByPermission = menuService.list();
-        return Result.ok(userMenuListByPermission, 200, "successs");
+        return Result.ok(userMenuListByPermission, 200, "success");
     }
 
     @GetMapping("/menuListByRoleId")
     public Result menuListByRoleId(@RequestParam("roleId") Long roleId){
         List<Menu> userMenuListByPermission = menuService.getUserMenuListByRoleId(roleId);
-        return Result.ok(userMenuListByPermission, 200, "successs");
+        return Result.ok(userMenuListByPermission, 200, "success");
     }
 }

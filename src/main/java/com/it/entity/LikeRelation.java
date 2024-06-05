@@ -13,7 +13,7 @@ import lombok.Data;
 @TableName("like_relation")
 public class LikeRelation {
 
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     private Long foodMenuId;

@@ -11,9 +11,11 @@ import com.it.entity.FoodMenu;
 import com.it.entity.FoodType;
 import com.it.entity.LikeRelation;
 import com.it.entity.MenuTypeRelation;
+import com.it.entity.User;
 import com.it.mapper.FoodMenuMapper;
 import com.it.mapper.LikeRelationMapper;
 import com.it.mapper.MenuTypeRelationMapper;
+import com.it.mapper.UserMapper;
 import com.it.req.LikeRelationReq;
 import com.it.res.FoodMenuDetailVO;
 import com.it.res.FoodMenuVO;
@@ -39,6 +41,9 @@ public class FoodMenuServiceImpl extends ServiceImpl<FoodMenuMapper, FoodMenu> i
 
     @Resource
     private FoodTypeService foodTypeService;
+
+    @Resource
+    private UserMapper userMapper;
 
     @Resource
     private FoodMenuConvert foodMenuConvert;
@@ -117,6 +122,8 @@ public class FoodMenuServiceImpl extends ServiceImpl<FoodMenuMapper, FoodMenu> i
         LikeRelation likeRelation = likeRelationMapper.selectOne(eq);
         if(!Objects.isNull(likeRelation)){
             foodMenuDetailVO.setLike(1);
+        }else{
+            foodMenuDetailVO.setLike(0);
         }
         return foodMenuDetailVO;
     }
@@ -160,6 +167,34 @@ public class FoodMenuServiceImpl extends ServiceImpl<FoodMenuMapper, FoodMenu> i
         }
         vo.setSubArr(foodMenuVOList);
         res.add(vo);
+        return res;
+    }
+
+    @Override
+    public MenuMainVO getStoreMenus(Long userId) {
+        if(userId <= 0){
+            userId = UserContext.getUserId();
+        }
+        MenuMainVO res = new MenuMainVO();
+
+
+        User user = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getId, userId));
+        res.setName(user.getUsername());
+        List<LikeRelation> likeRelations = likeRelationMapper.selectList(new LambdaQueryWrapper<LikeRelation>().eq(LikeRelation::getUserId, userId));
+        if (CollUtil.isEmpty(likeRelations)) {
+            return res;
+        }
+        List<Long> foodMenusIds = likeRelations.stream().map(LikeRelation::getFoodMenuId).distinct().collect(Collectors.toList());
+        List<FoodMenu> foodMenus = this.listByIds(foodMenusIds);
+        List<FoodMenuVO> foodMenuVOList = new ArrayList<>();
+        for (FoodMenu foodMenu : foodMenus) {
+            FoodMenuVO foodMenuVO = new FoodMenuVO();
+            foodMenuVO.setId(foodMenu.getId());
+            foodMenuVO.setName(foodMenu.getName());
+            foodMenuVO.setImg("http://127.0.0.1:8080/static/" + foodMenu.getPic());
+            foodMenuVOList.add(foodMenuVO);
+        }
+        res.setSubArr(foodMenuVOList);
         return res;
     }
 

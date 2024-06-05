@@ -12,6 +12,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.it.common.Result;
 import com.it.constants.UserType;
 import com.it.convert.CreateUserConvertUser;
+import com.it.entity.LikeRelation;
+import com.it.mapper.LikeRelationMapper;
 import com.it.mapper.UserMapper;
 import com.it.entity.User;
 import com.it.req.CreateUserReqDTO;
@@ -20,6 +22,7 @@ import com.it.req.common.LoginReqDTO;
 import com.it.service.AdminUserService;
 import com.it.service.MenuService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -44,6 +47,9 @@ public class AdminUserServiceImpl extends ServiceImpl<UserMapper, User> implemen
 
     @Resource
     private MenuService menuService;
+
+    @Resource
+    private LikeRelationMapper likeRelationMapper;
 
 
     @Override
@@ -83,7 +89,11 @@ public class AdminUserServiceImpl extends ServiceImpl<UserMapper, User> implemen
 
 
     @Override
+    @Transactional
     public Boolean deleteUserById(Long id) {
+        likeRelationMapper.delete(new LambdaQueryWrapper<LikeRelation>().eq(
+                LikeRelation::getUserId, id
+        ));
         return this.removeById(id);
     }
 
