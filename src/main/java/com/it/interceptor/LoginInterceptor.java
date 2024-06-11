@@ -24,10 +24,11 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String requestURI = request.getRequestURI();
+        log.info("url is {}", requestURI);
         if(requestURI.contains("/login") || requestURI.contains("/createUser") || requestURI.contains("static") || requestURI.contains("upload")){
             return true;
         }
-        log.info("url is {}", requestURI);
+
         String method = request.getMethod();
         if("OPTIONS".equals(method.toUpperCase())){
             return true;
